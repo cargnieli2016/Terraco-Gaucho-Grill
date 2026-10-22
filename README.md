@@ -30,19 +30,25 @@ O site foi desenvolvido com React e TypeScript, usando TanStack Start para as ro
 
 4. Abra no navegador o endereço exibido no terminal, normalmente `http://localhost:5173`.
 
-Para abrir a versão estática com a extensão Live Server do VS Code, rode `npm run build` e abra `dist/client/index.html` com o Live Server. Os caminhos dos arquivos gerados são relativos para funcionar também quando a pasta `dist/client` estiver dentro do workspace.
+Para abrir a versão estática com a extensão Live Server do VS Code:
+
+1. Rode `npm run build`.
+2. Abra a pasta `dist/client` como pasta do workspace no VS Code.
+3. Abra o `index.html` dessa pasta com o Live Server.
+
+O site precisa ser servido na raiz `/`. Se abrir `dist/client/index.html` enquanto a raiz do Live Server continua sendo a pasta principal do projeto, o endereço fica `/dist/client/index.html` e o roteador mostra a página 404. Como alternativa, rode `npm run preview` na pasta principal e acesse o endereço exibido no terminal.
 
 Para encerrar o servidor, pressione `Ctrl + C` no terminal.
 
 ## Comandos disponíveis
 
-| Comando | Descrição |
-| --- | --- |
-| `npm run dev` | Inicia o servidor local para desenvolvimento |
-| `npm run build` | Gera o site estático em `dist/client` |
-| `npm run preview` | Abre localmente a versão gerada |
-| `npm run lint` | Verifica o código com ESLint |
-| `npm test` | Executa os testes |
+| Comando           | Descrição                                    |
+| ----------------- | -------------------------------------------- |
+| `npm run dev`     | Inicia o servidor local para desenvolvimento |
+| `npm run build`   | Gera o site estático em `dist/client`        |
+| `npm run preview` | Abre localmente a versão gerada              |
+| `npm run lint`    | Verifica o código com ESLint                 |
+| `npm test`        | Executa os testes                            |
 
 Para conferir a versão de produção localmente:
 

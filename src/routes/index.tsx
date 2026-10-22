@@ -1,11 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { MapPin, Phone, Instagram, Flame, Salad, IceCream, Utensils } from "lucide-react";
-import f01 from "@/assets/foto-01.webp.asset.json";
-import f02 from "@/assets/foto-02.webp.asset.json";
-import f03 from "@/assets/foto-03.webp.asset.json";
-import f04 from "@/assets/foto-04.webp.asset.json";
-import f05 from "@/assets/foto-05.webp.asset.json";
-import f07 from "@/assets/foto-07.webp.asset.json";
+import f01 from "@/assets/fotos/foto-01.jpg";
+import f02 from "@/assets/fotos/foto-02.jpg";
+import f03 from "@/assets/fotos/foto-03.jpg";
+import f04 from "@/assets/fotos/foto-04.jpg";
+import f05 from "@/assets/fotos/foto-05.jpg";
+import f07 from "@/assets/fotos/foto-07.jpg";
 
 const PHONE = "(19) 3879-5201";
 const TEL = "tel:+551938795201";
@@ -50,7 +50,7 @@ function Index() {
       </header>
 
       <section className="relative flex min-h-[92vh] items-center">
-        <img src={f01.url} alt="Fachada do Terraço Gaúcho Grill" className="absolute inset-0 h-full w-full object-cover" />
+        <img src={f01} alt="Fachada do Terraço Gaúcho Grill" className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-hero-overlay" />
         <div className="relative mx-auto max-w-6xl px-6 py-32">
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-primary">Churrascaria em Monte Mor</p>
@@ -97,7 +97,7 @@ function Index() {
               [f01, "Nosso espaço"],
             ].map(([img, alt]) => (
               <figure key={alt as string} className="group overflow-hidden rounded-lg">
-                <img src={(img as { url: string }).url} alt={alt as string} loading="lazy" className="aspect-square w-full object-cover transition duration-500 group-hover:scale-105" />
+                <img src={img as string} alt={alt as string} loading="lazy" className="aspect-square w-full object-cover transition duration-500 group-hover:scale-105" />
               </figure>
             ))}
           </div>

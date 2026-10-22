@@ -8,7 +8,7 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
   vite: {
-    base: "./",
+    base: process.env.GITHUB_ACTIONS === "true" ? "/Terraco-Gaucho-Grill/" : "./",
   },
   nitro: false,
   tanstackStart: {

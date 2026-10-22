@@ -21,6 +21,9 @@ const PHONE = "(19) 3879-5201";
 const TEL = "tel:+551938795201";
 const INSTA = "https://www.instagram.com/terracogauchogrilloficial/";
 const ADDRESS = "R. Sete, 227 - Jardim Daniela, Monte Mor - SP, 13190-000";
+const MAPS_EMBED = `https://maps.google.com/maps?q=${encodeURIComponent(
+  `Terraço Gaúcho Grill, ${ADDRESS}`,
+)}&z=17&output=embed`;
 const MAPS =
   "https://www.google.com/maps/place/Terra%C3%A7o+Ga%C3%BAcho+Grill/@-22.9199762,-47.2496412,19z/data=!4m6!3m5!1s0x94c89a34ac179a87:0x499ccea7c0cbf8cf!8m2!3d-22.919823!4d-47.2496998!16s%2Fg%2F11b776c37b";
 
@@ -204,11 +207,7 @@ function Index() {
           </a>
         </div>
         <div className="map-frame">
-          <iframe
-            title="Mapa Terraço Gaúcho Grill"
-            src="https://maps.google.com/maps?q=-22.919823,-47.2496998&z=17&output=embed"
-            loading="lazy"
-          />
+          <iframe title="Mapa Terraço Gaúcho Grill" src={MAPS_EMBED} loading="lazy" />
         </div>
       </section>
 

@@ -503,7 +503,6 @@
   height: 100%;
   min-height: 390px;
   border: 0;
-  filter: grayscale(0.85) invert(0.9) contrast(0.85);
 }
 
 .site-footer {

@@ -1,14 +1,16 @@
-# Welcome to your Lovable project
+# Sabor na Brasa
+
+@asset:da_01m5jg7asxfq38ztmrdfjj81ct:"https://saborenabrasa.lovable.app/ - saborenabrasa_lovable_app_1920w_default.h2d by html.to.design ❤️ FREE version - 22/10/2026, 15:58:04 GMT-3" Faça para mim o site dessa churrascaria, enviei as fotos e os dados
 
 This project was built with [Lovable](https://lovable.dev).
 
 ## Build with Lovable
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/2dc41d10-abca-4b9c-b3c4-2376d2520942).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
@@ -20,10 +22,3 @@ cd <repository-name>
 npm i
 npm run dev
 ```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS

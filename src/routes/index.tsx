@@ -1,11 +1,21 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { MapPin, Phone, Instagram, Flame, Salad, IceCream, Utensils } from "lucide-react";
-import f01 from "@/assets/fotos/foto-01.jpg";
-import f02 from "@/assets/fotos/foto-02.jpg";
-import f03 from "@/assets/fotos/foto-03.jpg";
-import f04 from "@/assets/fotos/foto-04.jpg";
-import f05 from "@/assets/fotos/foto-05.jpg";
-import f07 from "@/assets/fotos/foto-07.jpg";
+import {
+  MapPin,
+  Phone,
+  Instagram,
+  Flame,
+  Salad,
+  IceCream,
+  Utensils,
+  ArrowDownRight,
+} from "lucide-react";
+import f01 from "@/assets/foto-01.jpg";
+import f02 from "@/assets/foto-02.jpg";
+import f03 from "@/assets/foto-03.jpg";
+import f04 from "@/assets/foto-04.jpg";
+import f05 from "@/assets/foto-05.jpg";
+import f07 from "@/assets/foto-07.jpg";
+import heroImage from "@/assets/churrasco-espeto.jpg";
 
 const PHONE = "(19) 3879-5201";
 const TEL = "tel:+551938795201";
@@ -18,9 +28,16 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Terraço Gaúcho Grill | Churrascaria em Monte Mor - SP" },
-      { name: "description", content: "Churrasco, buffet completo, saladas e sobremesas no Terraço Gaúcho Grill, Jardim Daniela, Monte Mor - SP." },
+      {
+        name: "description",
+        content:
+          "Churrasco, buffet completo, saladas e sobremesas no Terraço Gaúcho Grill, Jardim Daniela, Monte Mor - SP.",
+      },
       { property: "og:title", content: "Terraço Gaúcho Grill | Churrascaria em Monte Mor" },
-      { property: "og:description", content: "Churrasco, buffet completo e sobremesas em Monte Mor - SP." },
+      {
+        property: "og:description",
+        content: "Churrasco, buffet completo e sobremesas em Monte Mor - SP.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -29,7 +46,11 @@ export const Route = createFileRoute("/")({
 });
 
 const highlights = [
-  { icon: Flame, title: "Churrasco na brasa", text: "Carnes selecionadas preparadas no ponto certo." },
+  {
+    icon: Flame,
+    title: "Churrasco na brasa",
+    text: "Carnes selecionadas preparadas no ponto certo.",
+  },
   { icon: Utensils, title: "Buffet completo", text: "Pratos quentes variados todos os dias." },
   { icon: Salad, title: "Saladas frescas", text: "Bufê de saladas, legumes e queijos." },
   { icon: IceCream, title: "Sobremesas", text: "Pudim, mousses e doces caseiros." },
@@ -38,91 +59,167 @@ const highlights = [
 function Index() {
   return (
     <main>
-      <header className="absolute inset-x-0 top-0 z-20">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
-          <span className="font-display text-xl font-bold tracking-wide">
-            Terraço <span className="text-primary">Gaúcho</span> Grill
-          </span>
-          <a href={TEL} className="hidden items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground sm:flex">
-            <Phone className="h-4 w-4" /> {PHONE}
+      <header className="site-header">
+        <div className="site-nav">
+          <a href="#topo" className="site-brand" aria-label="Terraço Gaúcho Grill, início">
+            <span className="brand-mark">TG</span>
+            <span>
+              <span className="brand-name">
+                TERRAÇO <span>GAÚCHO</span>
+              </span>
+              <span className="brand-caption">GRILL · MONTE MOR</span>
+            </span>
+          </a>
+          <nav className="site-links" aria-label="Navegação principal">
+            <a href="#experiencia">A casa</a>
+            <a href="#sabores">Sabores</a>
+            <a href="#visite">Onde estamos</a>
+          </nav>
+          <a href={MAPS} target="_blank" rel="noreferrer" className="nav-cta">
+            <MapPin className="h-4 w-4" /> Como chegar
           </a>
         </div>
       </header>
 
-      <section className="relative flex min-h-[92vh] items-center">
-        <img src={f01} alt="Fachada do Terraço Gaúcho Grill" className="absolute inset-0 h-full w-full object-cover" />
-        <div className="absolute inset-0 bg-hero-overlay" />
-        <div className="relative mx-auto max-w-6xl px-6 py-32">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-primary">Churrascaria em Monte Mor</p>
-          <h1 className="max-w-3xl text-5xl font-bold leading-tight md:text-7xl">
-            O sabor do churrasco gaúcho, do jeito que você merece.
-          </h1>
-          <p className="mt-6 max-w-xl text-lg text-muted-foreground">
-            Carnes na brasa, buffet completo, saladas frescas e sobremesas caseiras em um ambiente acolhedor.
+      <section id="topo" className="hero-section">
+        <img
+          src={heroImage}
+          alt="Carnes e legumes assados em espetos na brasa"
+          className="hero-image"
+        />
+        <div className="hero-shade" />
+        <div className="hero-content">
+          <p className="hero-eyebrow">
+            <span /> Churrascaria em Monte Mor
           </p>
-          <div className="mt-10 flex flex-wrap gap-4">
-            <a href={MAPS} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 font-semibold text-primary-foreground transition hover:opacity-90">
-              <MapPin className="h-5 w-5" /> Como chegar
+          <h1 className="hero-title">
+            O verdadeiro
+            <br />
+            <span>sabor da brasa.</span>
+          </h1>
+          <p className="hero-description">
+            Carnes no espeto, buffet completo e aquele jeito gaúcho de receber. Sua próxima boa
+            lembrança começa à mesa.
+          </p>
+          <div className="hero-actions">
+            <a href={MAPS} target="_blank" rel="noreferrer" className="button-primary">
+              <MapPin className="h-5 w-5" /> Venha nos visitar
             </a>
-            <a href={INSTA} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-md border border-primary px-6 py-3 font-semibold text-primary transition hover:bg-primary hover:text-primary-foreground">
-              <Instagram className="h-5 w-5" /> Instagram
+            <a href="#sabores" className="button-outline">
+              Conheça a casa <ArrowDownRight className="h-4 w-4" />
             </a>
           </div>
+          <div className="hero-notes" aria-label="Destaques">
+            <span>
+              <i /> Churrasco na brasa
+            </span>
+            <span>
+              <i /> Buffet variado
+            </span>
+            <span>
+              <i /> Monte Mor · SP
+            </span>
+          </div>
+        </div>
+        <a href="#experiencia" className="hero-scroll" aria-label="Rolar para conhecer a casa">
+          <span>DESCUBRA</span>
+          <ArrowDownRight className="h-4 w-4" />
+        </a>
+      </section>
+
+      <section id="experiencia" className="highlights-section">
+        <div className="section-kicker">FEITO PARA SENTAR E APROVEITAR</div>
+        <div className="highlights-grid">
+          {highlights.map(({ icon: Icon, title, text }, index) => (
+            <article key={title} className="highlight-card">
+              <span className="highlight-number">0{index + 1}</span>
+              <Icon className="highlight-icon" />
+              <h2>{title}</h2>
+              <p>{text}</p>
+            </article>
+          ))}
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-6xl gap-6 px-6 py-24 sm:grid-cols-2 lg:grid-cols-4">
-        {highlights.map(({ icon: Icon, title, text }) => (
-          <div key={title} className="rounded-lg border bg-card p-6">
-            <Icon className="h-8 w-8 text-primary" />
-            <h3 className="mt-4 text-xl font-semibold">{title}</h3>
-            <p className="mt-2 text-sm text-muted-foreground">{text}</p>
-          </div>
-        ))}
-      </section>
-
-      <section className="bg-wine py-24">
+      <section id="sabores" className="gallery-section">
         <div className="mx-auto max-w-6xl px-6">
-          <h2 className="text-center text-4xl font-bold md:text-5xl">Nossa mesa</h2>
-          <p className="mx-auto mt-4 max-w-xl text-center text-secondary-foreground/80">
-            Um pouco do que espera por você no Terraço Gaúcho Grill.
-          </p>
-          <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-3">
+          <div className="gallery-heading">
+            <div>
+              <p className="section-kicker">DA BRASA PARA A MESA</p>
+              <h2>Nossos sabores</h2>
+            </div>
+            <p>
+              Uma mesa farta, ingredientes frescos e o prazer de comer bem. Veja um pouco do que
+              espera por você.
+            </p>
+          </div>
+          <div className="gallery-grid">
             {[
               [f03, "Buffet de pratos quentes"],
-              [f05, "Bufê de saladas"],
-              [f04, "Batatas e acompanhamentos"],
+              [f05, "Bufê de saladas frescas"],
+              [f04, "Acompanhamentos preparados com cuidado"],
               [f07, "Sobremesas caseiras"],
-              [f02, "Massas"],
-              [f01, "Nosso espaço"],
-            ].map(([img, alt]) => (
-              <figure key={alt as string} className="group overflow-hidden rounded-lg">
-                <img src={img as string} alt={alt as string} loading="lazy" className="aspect-square w-full object-cover transition duration-500 group-hover:scale-105" />
+              [f02, "Massas servidas no buffet"],
+              [f01, "Fachada do Terraço Gaúcho Grill"],
+            ].map(([img, alt], index) => (
+              <figure key={alt} className={`gallery-item gallery-item-${index + 1}`}>
+                <img src={img} alt={alt} loading="lazy" />
+                <figcaption>{alt}</figcaption>
               </figure>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-6xl gap-10 px-6 py-24 md:grid-cols-2">
-        <div>
-          <h2 className="text-4xl font-bold md:text-5xl">Venha nos visitar</h2>
-          <ul className="mt-8 space-y-5 text-lg">
-            <li className="flex gap-3"><MapPin className="mt-1 h-5 w-5 shrink-0 text-primary" /><a href={MAPS} target="_blank" rel="noreferrer" className="hover:text-primary">{ADDRESS}</a></li>
-            <li className="flex gap-3"><Phone className="mt-1 h-5 w-5 shrink-0 text-primary" /><a href={TEL} className="hover:text-primary">{PHONE}</a></li>
-            <li className="flex gap-3"><Instagram className="mt-1 h-5 w-5 shrink-0 text-primary" /><a href={INSTA} target="_blank" rel="noreferrer" className="hover:text-primary">@terracogauchogrilloficial</a></li>
+      <section id="visite" className="visit-section">
+        <div className="visit-copy">
+          <p className="section-kicker">VAI SER UM PRAZER RECEBER VOCÊ</p>
+          <h2>
+            Uma boa mesa
+            <br />
+            <span>fica ainda melhor</span>
+            <br />
+            com você.
+          </h2>
+          <ul className="visit-details">
+            <li>
+              <MapPin />
+              <a href={MAPS} target="_blank" rel="noreferrer">
+                {ADDRESS}
+              </a>
+            </li>
+            <li>
+              <Phone />
+              <a href={TEL}>{PHONE}</a>
+            </li>
+            <li>
+              <Instagram />
+              <a href={INSTA} target="_blank" rel="noreferrer">
+                @terracogauchogrilloficial
+              </a>
+            </li>
           </ul>
+          <a href={MAPS} target="_blank" rel="noreferrer" className="button-primary visit-button">
+            Abrir no Google Maps <ArrowDownRight className="h-4 w-4" />
+          </a>
         </div>
-        <iframe
-          title="Mapa Terraço Gaúcho Grill"
-          src="https://maps.google.com/maps?q=-22.919823,-47.2496998&z=17&output=embed"
-          className="h-80 w-full rounded-lg border"
-          loading="lazy"
-        />
+        <div className="map-frame">
+          <iframe
+            title="Mapa Terraço Gaúcho Grill"
+            src="https://maps.google.com/maps?q=-22.919823,-47.2496998&z=17&output=embed"
+            loading="lazy"
+          />
+        </div>
       </section>
 
-      <footer className="border-t py-8 text-center text-sm text-muted-foreground">
-        © {new Date().getFullYear()} Terraço Gaúcho Grill · Monte Mor - SP
+      <footer className="site-footer">
+        <a href="#topo" className="footer-brand">
+          TERRAÇO <span>GAÚCHO</span> GRILL
+        </a>
+        <span>© {new Date().getFullYear()} Terraço Gaúcho Grill · Monte Mor - SP</span>
+        <a href={INSTA} target="_blank" rel="noreferrer">
+          Siga no Instagram <ArrowDownRight className="h-4 w-4" />
+        </a>
       </footer>
     </main>
   );

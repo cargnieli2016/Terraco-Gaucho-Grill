@@ -1,48 +1,88 @@
-# Terraço Gaúcho Grill — site
+# Terraço Gaúcho Grill
 
-Site da churrascaria Terraço Gaúcho Grill (Monte Mor - SP).
-Feito com [Lovable](https://lovable.dev) e salvo aqui no repositório.
+Site oficial do Terraço Gaúcho Grill, em Monte Mor - SP. Um espaço para apresentar a casa, destacar seus diferenciais e ajudar os clientes a encontrar as principais informações.
 
-## Rodar na sua máquina (passo a passo)
+## Sobre o projeto
 
-1. Instale o **Node.js** (versão 22) em https://nodejs.org — é o único programa extra necessário.
-2. Baixe este repositório (no GitHub: **Code → Download ZIP**, ou `git clone <url-do-repositório>`).
-3. Abra a pasta no VS Code.
-4. Abra o terminal do VS Code: menu **Terminal → New Terminal** (atalho `Ctrl + '` no Windows/Linux, `Ctrl + Shift + \`` no Mac).
-5. Digite, um de cada vez, apertando Enter depois de cada linha:
+O site foi desenvolvido com React e TypeScript, usando TanStack Start para as rotas e Vite como servidor de desenvolvimento. O build pré-renderiza a página inicial como HTML estático, sem necessidade de servidor ou Worker em produção.
 
-```sh
-npm install
-npm run dev
-```
+## Comece a usar
 
-6. O `npm run dev` mostra um endereço no terminal (normalmente `http://localhost:5173`).
-   Abra esse endereço no navegador — é o site, e ele se atualiza sozinho quando você salva um arquivo.
+### Requisitos
 
-Para ver a versão final, igual à que vai para o ar:
+- Node.js 22 ou superior
+- npm
+
+### Instalação
+
+1. Abra a pasta do projeto no VS Code.
+2. No terminal, instale as dependências:
+
+   ```sh
+   npm install
+   ```
+
+3. Inicie o servidor local:
+
+   ```sh
+   npm run dev
+   ```
+
+4. Abra no navegador o endereço exibido no terminal, normalmente `http://localhost:5173`.
+
+Para abrir a versão estática com a extensão Live Server do VS Code, gere o build com `npm run build` e abra `dist/client/index.html` com o Live Server.
+
+Para encerrar o servidor, pressione `Ctrl + C` no terminal.
+
+## Comandos disponíveis
+
+| Comando | Descrição |
+| --- | --- |
+| `npm run dev` | Inicia o servidor local para desenvolvimento |
+| `npm run build` | Gera o site estático em `dist/client` |
+| `npm run preview` | Abre localmente a versão gerada |
+| `npm run lint` | Verifica o código com ESLint |
+| `npm test` | Executa os testes |
+
+Para conferir a versão de produção localmente:
 
 ```sh
 npm run build
 npm run preview
 ```
 
-## Onde mexer
+## Publicação estática
 
-- `src/routes/index.tsx` → todo o texto, botões, telefone, endereço e Instagram da página.
-- `src/routes/__root.tsx` → título da aba do navegador, descrição e ícone (favicon).
-- `src/styles.css` → cores e fontes. As cores ficam nas variáveis no topo do arquivo.
-- `src/assets/fotos/` → as fotos que aparecem na página. Para trocar uma foto,
-  salve outra com o mesmo nome por cima (ex.: `foto-01.jpg`) e pronto, nada muda no código.
+- **GitHub Pages:** o workflow `.github/workflows/deploy-pages.yml` publica automaticamente `dist/client` a cada push para `main`. Nas configurações do repositório, abra **Settings → Pages** e selecione **GitHub Actions** como origem da publicação.
+- **Cloudflare Pages:** use `npm run build` como comando de build e `dist/client` como diretório de saída.
 
-## Observações
+O diretório publicado contém o `index.html` pré-renderizado e os recursos necessários; não publique a pasta `dist` inteira.
 
-- O site **não usa banco de dados nem login**, então não precisa configurar nenhuma chave ou senha.
-- O mapa no fim da página é o Google Maps embutido pelo endereço, funciona sem chave.
-- As fotos já estão dentro de `src/assets/fotos/`, ou seja: vêm junto no download do GitHub.
+## Estrutura principal
 
-## Built with
+```text
+src/
+  assets/             Imagens usadas no site
+  routes/
+    index.tsx         Conteúdo da página inicial
+    __root.tsx        Estrutura geral e metadados do site
+  styles.css          Estilos globais, cores e tipografia
+public/               Arquivos públicos
+```
 
-- TanStack Start
-- TypeScript
+## Onde fazer alterações
+
+- **Textos, botões e informações da página:** `src/routes/index.tsx`
+- **Título da aba, descrição e ícone:** `src/routes/__root.tsx`
+- **Cores e estilos globais:** `src/styles.css`
+- **Fotos:** `src/assets/`
+
+Ao substituir uma foto, mantenha o nome do arquivo existente para que o site continue encontrando a imagem.
+
+## Tecnologias
+
 - React
+- TypeScript
+- TanStack Start e TanStack Router
+- Vite
 - Tailwind CSS

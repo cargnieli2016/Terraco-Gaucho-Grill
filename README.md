@@ -30,7 +30,7 @@ O site foi desenvolvido com React e TypeScript, usando TanStack Start para as ro
 
 4. Abra no navegador o endereço exibido no terminal, normalmente `http://localhost:5173`.
 
-Para abrir a versão estática com a extensão Live Server do VS Code, gere o build com `npm run build` e abra `dist/client/index.html` com o Live Server.
+Para abrir a versão estática com a extensão Live Server do VS Code, rode `npm run build` e abra `dist/client/index.html` com o Live Server. Os caminhos dos arquivos gerados são relativos para funcionar também quando a pasta `dist/client` estiver dentro do workspace.
 
 Para encerrar o servidor, pressione `Ctrl + C` no terminal.
 
